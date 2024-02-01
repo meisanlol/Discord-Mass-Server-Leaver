@@ -11,7 +11,7 @@ async def mass_leave():
             guilds = await resp.json()
             for guild in guilds:
                 try:
-                    # cuz maybe aiohttp is broken we try requests
+                    
                     await session.delete(f'https://discordapp.com/api/v6/users/@me/guilds/{guild["id"]}', headers=headers)
                     print(f'Left {guild["name"]}')
                     await session.delete(f'https://discordapp.com/api/v6/users/@me/guilds/{guild["id"]}', headers=headers)
